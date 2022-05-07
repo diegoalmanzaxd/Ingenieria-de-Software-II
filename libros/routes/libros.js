@@ -48,8 +48,9 @@ router.patch('/:idLibro', (req,res,next)=>{
   tablaLibros2[id-1]['titulo']=req.body.titulo;
   tablaLibros2[id-1]['autor']=req.body.autor;
   res.status(200).json({'mensaje':'actualizado'});
+});
 
-  router.delete('/:idLibro',(req, res, next)=>{
+router.delete('/:idLibro',(req, res, next)=>{
   var id= req.params.idLibro;
   var eliminado=tablaLibros2.splice(id-1,1);
   res.status(200).json("eliminado")
